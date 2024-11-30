@@ -1,0 +1,201 @@
+address_id,street,zip_code,city,customer_id
+1,435 Susan Place,71332 CEDEX,Chalon-sur-Saône,47
+2,93890 Lunder Junction,,Kikinda,20
+3,4275 Cardinal Trail,375 01,Týn nad Vltavou,46
+4,167 Shoshone Street,735 72,Karviná,14
+5,1 West Alley,1126,Lydenburg,44
+6,928 Sutherland Hill,374 81,Karlshamn,4
+7,68506 Lillian Drive,,Banjar Sandinggianyar,38
+8,724 Trailsway Point,8308,Tagbina,43
+9,9647 Luster Way,,Al Qadarif,30
+10,75929 Badeau Road,90-510,Grabów nad Prosną,35
+11,0637 Kingsford Alley,,Keetmanshoop,3
+12,118 Hoard Junction,,Beishan,39
+13,0086 Melvin Pass,,Hekou,31
+14,3 Crownhardt Plaza,68400-000,Cametá,7
+15,4697 Westerfield Road,4534,Terneuzen,29
+16,0 6th Avenue,,Waiwejak,15
+17,264 Sutteridge Park,,Razan,23
+18,837 Gulseth Avenue,,Şuwayr,29
+19,0 Waywood Way,,Khakhea,15
+20,62512 Judy Point,6005,Luzern,25
+21,0 Talisman Lane,,Huaxijie,19
+22,25222 Dakota Circle,,Palaió Fáliro,15
+23,33386 3rd Plaza,6227,San Juan,37
+24,80621 Arrowood Center,,Dadong,9
+25,06 Merchant Pass,,Partikan,14
+26,54 Village Green Place,,Cibolek Kidul,5
+27,61009 Oak Valley Park,5035,Bergen,8
+28,8 5th Street,,San Jorge,21
+29,09 Sutherland Center,1257,Oslo,26
+30,87 Summit Court,,Kulpin,14
+31,57 Northport Terrace,64-360,Zbąszyń,41
+32,9096 Arizona Plaza,59895 CEDEX 9,Lille,47
+33,2 Lawn Way,,Jiutai,18
+34,0 Bartillon Terrace,,Arzakan,11
+35,0400 Karstens Hill,,Yesan,2
+36,87 Londonderry Street,,Shaping,33
+37,31 Lawn Terrace,95890-000,Teutônia,4
+38,8 Dunning Trail,571 36,Nässjö,10
+39,088 Eggendart Circle,41204 CEDEX,Romorantin-Lanthenay,43
+40,89 Bultman Crossing,,Xueshan,3
+41,8455 Springs Drive,P72,Oughterard,28
+42,01984 Raven Parkway,,Voronkov,3
+43,8 Mandrake Alley,,Bitobe,16
+44,2835 Sullivan Drive,L-4982,Reckange-sur-Mess,28
+45,51 Hermina Avenue,,Quillabamba,39
+46,26778 Anderson Park,352555,Perepravnaya,42
+47,06 Thompson Park,,Kekeri,6
+48,67374 John Wall Avenue,,Guzhen,47
+49,8 John Wall Center,,Taifu,48
+50,448 Onsgard Street,,Makin Village,45
+51,06116 Eastwood Plaza,,Telagaselaba,14
+52,20 Leroy Circle,57954 CEDEX,Montigny-lès-Metz,11
+53,13 Bay Lane,14790-000,Guaíra,49
+54,09019 Luster Avenue,,Wotan,9
+55,6 Hazelcrest Parkway,,Belūsovka,25
+56,761 Maple Junction,10105,New York City,40
+57,22 Springs Crossing,,N’dalatando,32
+58,072 Continental Junction,270-0164,Nagareyama,19
+59,54421 Saint Paul Lane,MD-7702,Căuşeni,46
+60,1688 Melvin Center,,Holma,30
+61,85164 Lighthouse Bay Terrace,663214,Svetlogorsk,32
+62,9 Raven Place,,Monguno,39
+63,2 Kings Point,565 01,Nasavrky,33
+64,84231 Algoma Court,H9K,Sainte-Marthe-sur-le-Lac,36
+65,9 Forest Run Drive,,Famagusta,9
+66,691 Warbler Circle,11506,Juan Adrián,29
+67,37577 Cambridge Hill,2715-217,Almargem do Bispo,1
+68,34802 Meadow Ridge Terrace,,Danchang,20
+69,21538 Logan Drive,93995,Francisco I Madero,30
+70,9683 Barby Hill,,Chongmin,41
+71,0671 Moland Parkway,,Gucheng,23
+72,64 Autumn Leaf Terrace,,Timur,41
+73,837 Clyde Gallagher Circle,979-1543,Namie,45
+74,40539 Parkside Plaza,1556,Busay,47
+75,5 Red Cloud Hill,81028 CEDEX 9,Albi,3
+76,9 Mandrake Point,,Savski Venac,18
+77,92033 Maple Wood Court,,El Hermel,37
+78,66758 Tennessee Point,,Belo sur Tsiribihina,50
+79,46325 Logan Hill,,Likasi,22
+80,0750 American Junction,706037,Palmito,43
+81,518 Toban Park,,Karanggeneng,11
+82,30 Burrows Crossing,,Marcovia,30
+83,57675 Hauk Point,86-120,Pruszcz,12
+84,04144 Talmadge Court,707037,Toluviejo,49
+85,9160 Westend Circle,77-141,Borzytuchom,26
+86,7315 Oakridge Road,N2L,Labelle,26
+87,2 Clarendon Court,155334,Vichuga,32
+88,55151 Westridge Alley,696 47,Žeravice,9
+89,49086 Eastlawn Lane,,Biris Daja,37
+90,1 Grim Hill,,Weiguo,11
+91,9197 Bartelt Way,,Zumiao,21
+92,84430 Merrick Trail,1715,Tigbaw,35
+93,244 Spohn Road,857 42,Sundsvall,20
+94,0 Carioca Court,50902,Kuala Lumpur,29
+95,400 Continental Street,22511,Nowshera Cantonment,24
+96,81 Debs Parkway,,Cikawung,40
+97,2 Main Place,5407,Muñoz East,29
+98,7073 Welch Junction,634069,Tomsk,42
+99,7 Stone Corner Place,5019,Tilburg,47
+100,0 Steensland Avenue,,Qiulu,35
+101,4377 Boyd Hill,,Krajan Karanganyar,24
+102,652 Merry Crossing,,Lazurne,38
+103,75129 Graceland Avenue,4894,Bulls,38
+104,86 Doe Crossing Road,,T’ongch’ŏn-ŭp,12
+105,1947 Declaration Terrace,91505,Burbank,44
+106,70019 Little Fleur Road,,Amberd,22
+107,03 Nova Park,,Gandong,26
+108,55 Stephen Circle,,Dongzhang,44
+109,03 Artisan Road,,Mlowo,14
+110,756 Emmet Point,411 17,Libochovice,14
+111,59000 Magdeline Hill,9103,Rawson,9
+112,18 Sundown Parkway,,Şirrīn ash Shamālīyah,14
+113,627 Dorton Street,9242,Khulna,43
+114,6811 Kim Pass,5120-040,Arcos,50
+115,67985 Summit Point,,Hengshanqiao,10
+116,30885 Pawling Plaza,28001,Utena,21
+117,6 Dixon Trail,,Muara,15
+118,09 Buhler Pass,13730-000,Mococa,15
+119,4261 Gerald Terrace,606168,Vacha,1
+120,0 Esch Court,,Raofeng,41
+121,91 Walton Alley,8117,Matiao,9
+122,493 Butterfield Pass,783 71,Holice,33
+123,767 John Wall Park,,Yili,38
+124,6033 Nova Crossing,,Wosai,22
+125,5210 Daystar Alley,BS41,Bristol,2
+126,982 Golf View Street,999-1413,Imaichi,47
+127,8 Merrick Crossing,,Thị Trấn Tân Yên,13
+128,01 Kennedy Center,,Péplos,18
+129,67 Washington Junction,,Ghormach,45
+130,13 Twin Pines Alley,141707,Novokhovrino,34
+131,7 Sage Trail,11550,Minuwangoda,44
+132,11075 Paget Way,,Colón,28
+133,78 Brown Parkway,,Lizhai,33
+134,75548 Transport Terrace,,Eisen,26
+135,64 Pankratz Plaza,49490-000,Poço Verde,11
+136,09 Steensland Crossing,,Baidoa,41
+137,14 Sunbrook Point,,Luojiang,37
+138,68 Logan Trail,93828,20 de Noviembre,12
+139,3429 Troy Trail,6165,Veliko Tŭrnovo,43
+140,4006 Cardinal Lane,,Smínthi,2
+141,96 Esch Junction,47-420,Kuźnia Raciborska,20
+142,3 Harbort Trail,,Longhe,28
+143,413 Sutherland Avenue,,Los Santos,25
+144,680 Bellgrove Terrace,368156,Miatli,44
+145,9 Scott Pass,,Xifengshan,11
+146,2 Oriole Road,63-308,Gizałki,33
+147,1838 Artisan Hill,69820-000,Canutama,12
+148,8 Steensland Street,H8P,Morris,14
+149,9356 Barnett Terrace,,Liushun,36
+150,1055 Scott Hill,,La Unión,12
+151,7 Dunning Plaza,12027,Esquipulas Palo Gordo,4
+152,37740 Thompson Court,,Ralevka,12
+153,687 Nobel Park,65218-000,Matinha,43
+154,70146 Jackson Trail,,Kuafeu,37
+155,5342 Sunnyside Way,,Honglu,14
+156,15 Warrior Lane,,Khawr Maksar,27
+157,26342 Pierstorff Court,,Jinji,16
+158,9551 Onsgard Terrace,417 02,Göteborg,9
+159,701 Comanche Drive,,Kalýves Polygýrou,18
+160,73913 South Trail,7100-150,Monte da Boavista,32
+161,3310 Killdeer Road,691 02,Velké Bílovice,28
+162,387 Towne Avenue,,Ughelli,37
+163,9 Heffernan Alley,6526,Santa Paz,22
+164,01 Linden Park,,Goba,29
+165,9970 Forest Dale Point,,Tsaratanana,4
+166,48600 Badeau Court,29390-000,Iúna,4
+167,79707 Charing Cross Place,,Suban Jeriji,18
+168,0 Redwing Trail,6820,Maslog,42
+169,46 Eastlawn Center,,Kuncen,36
+170,3420 Rockefeller Drive,,Ekasapta,42
+171,1223 Manitowish Junction,,Sang-e Chārak,21
+172,406 Manley Terrace,61015 CEDEX,Alençon,14
+173,82970 Corry Trail,,Korba,26
+174,85469 Nevada Circle,2840-547,Quinta da Courela,5
+175,3876 Mcbride Center,77214 CEDEX,Avon,27
+176,008 Lyons Center,707-0112,Yono,47
+177,35 Sycamore Trail,613470,Nema,17
+178,1383 Delladonna Court,4116,Biñan,8
+179,5042 Holy Cross Junction,,Thị Trấn Thuận Châu,31
+180,0661 Haas Pass,5306,Batarasa,7
+181,758 Shoshone Park,,Sizhou,32
+182,37 Brown Crossing,,Famagusta,34
+183,5453 Gale Place,,Warnes,43
+184,0762 Buena Vista Court,,Cangshan,38
+185,15 Chinook Point,92671 CEDEX,Courbevoie,40
+186,20220 Upham Hill,97-510,Ręczno,32
+187,9221 Main Circle,12160,Sam Khok,25
+188,8163 Service Hill,,Cipari,34
+189,38213 Judy Pass,,Dióni,27
+190,8370 Carey Lane,368997,Karata,38
+191,6 Mcbride Center,,Malichang,50
+192,9408 Del Sol Crossing,,Chunmuying,42
+193,16 Shopko Center,,Pamungguan,36
+194,817 Loomis Parkway,,Pā’īn-e Bāzār-e Rūdbār,16
+195,9513 Darwin Point,789 62,Bohutín,24
+196,56453 Shoshone Avenue,,Puhechang,1
+197,72 Village Park,5610,Feliciano,38
+198,15 Beilfuss Street,12437,Berlin,48
+199,1 Fuller Way,,Xijiao,9
+200,15337 Magdeline Trail,932-0056,Oyabe,40
