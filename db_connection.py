@@ -1,6 +1,21 @@
 import mysql.connector
 from mysql.connector import Error
 
+def get_connection():
+    """Get a connection to the MySQL database"""
+    try:
+        connection = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="lusining123",
+            database="EcommerceDB"
+        )
+        if connection.is_connected():
+            return connection
+    except Error as e:
+        print(f"Error connecting to MySQL database: {e}")
+        raise e
+
 class DatabaseConnection:
     def __init__(self, host="localhost", user="root", password="lusining123", database="EcommerceDB"):
         self.host = host
