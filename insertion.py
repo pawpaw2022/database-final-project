@@ -285,14 +285,14 @@ def main():
         # clear_tables(connection)
         
         # Then insert in correct order
-        # insert_customers(connection)
-        # insert_addresses(connection)
-        # insert_payments(connection)
-        # insert_categories(connection)
-        # insert_products(connection)
-        # insert_profiles(connection)
-        # insert_vendors(connection)
-        # insert_orders(connection)
+        insert_customers(connection)
+        insert_addresses(connection)
+        insert_payments(connection)
+        insert_categories(connection)
+        insert_products(connection)
+        insert_profiles(connection)
+        insert_vendors(connection)
+        insert_orders(connection)
         
         print("Data insertion completed successfully")
         

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Starting MySQL container..."
-docker start mysql
+docker start mysql-oracle
 if [ $? -ne 0 ]; then
     echo "Error: Failed to start MySQL container"
     exit 1

@@ -40,11 +40,9 @@ CREATE TABLE address (
 -- Payment table
 CREATE TABLE payment (
     payment_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT,
     card_number VARCHAR(20),
     cvv VARCHAR(4),
     expiration_date DATE,
-    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
 
 -- Profile table
