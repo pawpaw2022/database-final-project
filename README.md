@@ -171,6 +171,39 @@ JOIN product p ON o.product_id = p.product_id
 GROUP BY v.vendor_id, v.name;
 ```
 
+### 10. Product Analytics by Category and Discount
+Analyzes product performance filtered by category and discount threshold.
+```sql
+SELECT p.name,
+       COUNT(o.order_id) as times_ordered,
+       SUM(o.quantity) as total_quantity,
+       p.discount,
+       c.name as category_name
+FROM product p
+LEFT JOIN orders o ON p.product_id = o.product_id
+LEFT JOIN category c ON p.category_id = c.category_id
+WHERE p.discount >= [min_discount]
+  AND (c.category_id = [category_id] OR [category_id] IS NULL)
+GROUP BY p.product_id, p.name, p.discount, c.name
+ORDER BY times_ordered DESC;
+```
+
+### 11. Customer Order Statistics
+Provides an overview of customer ordering patterns and vendor interactions.
+```sql
+SELECT c.customer_id,
+       c.name,
+       c.email,
+       COUNT(DISTINCT o.order_id) as total_orders,
+       COUNT(DISTINCT v.vendor_id) as vendors_used
+FROM customer c
+LEFT JOIN orders o ON c.customer_id = o.customer_id
+LEFT JOIN vendor v ON o.created_by = v.vendor_id
+WHERE c.name LIKE '%[search_term]%'
+   OR c.email LIKE '%[search_term]%'
+GROUP BY c.customer_id, c.name, c.email;
+```
+
 Note: Replace placeholder values (e.g., [customer_id], [order_id]) with actual values when executing queries.
 
 ## Installation
