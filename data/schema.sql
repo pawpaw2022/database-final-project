@@ -16,8 +16,7 @@ DROP TABLE IF EXISTS customer;
 CREATE TABLE vendor (
     vendor_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
-    hotline VARCHAR(20),
-    description TEXT
+    hotline VARCHAR(20)
 );
 
 -- Customer table
@@ -25,8 +24,7 @@ CREATE TABLE customer (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
-    phone VARCHAR(20),
-    bio TEXT
+    phone VARCHAR(20)
 );
 
 -- Address table (removed customer_id foreign key)
@@ -42,7 +40,7 @@ CREATE TABLE payment (
     payment_id INT AUTO_INCREMENT PRIMARY KEY,
     card_number VARCHAR(20),
     cvv VARCHAR(4),
-    expiration_date DATE,
+    expiration_date DATE
 );
 
 -- Profile table
@@ -66,7 +64,6 @@ CREATE TABLE category (
 CREATE TABLE product (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    description TEXT,
     quantity INT DEFAULT 1,
     discount DECIMAL(5, 2) DEFAULT 1 CHECK (discount >= 0 AND discount <= 1),
     category_id INT,

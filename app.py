@@ -78,7 +78,7 @@ if main_options == "Basic Queries":
         order_id = st.text_input("Enter Order ID")
         if st.button("Search Products"):
             cursor.execute("""
-                SELECT p.product_id, p.name, p.description, o.quantity,
+                SELECT p.product_id, p.name, o.quantity,
                        p.discount, cat.name as category
                 FROM orders o
                 JOIN product p ON o.product_id = p.product_id
@@ -118,7 +118,7 @@ if main_options == "Basic Queries":
         customer_id = st.text_input("Enter Customer ID")
         if st.button("View Profile"):
             cursor.execute("""
-                SELECT c.name, c.email, c.phone, c.bio,
+                SELECT c.name, c.email, c.phone,
                        a.street, a.city, a.zip_code,
                        p.card_number, p.expiration_date
                 FROM customer c
@@ -143,7 +143,7 @@ if main_options == "Basic Queries":
         
         if st.button("View Products"):
             cursor.execute("""
-                SELECT p.name, p.description, p.quantity, p.discount,
+                SELECT p.name, p.quantity, p.discount,
                        c.name as category_name
                 FROM product p
                 JOIN category c ON p.category_id = c.category_id
@@ -182,12 +182,12 @@ if main_options == "Basic Queries":
         search_term = st.text_input("Enter product name or description")
         if st.button("Search"):
             cursor.execute("""
-                SELECT p.name, p.description, p.quantity, p.discount,
+                SELECT p.name, p.quantity, p.discount,
                        c.name as category_name
                 FROM product p
                 LEFT JOIN category c ON p.category_id = c.category_id
-                WHERE p.name LIKE %s OR p.description LIKE %s
-            """, (f"%{search_term}%", f"%{search_term}%"))
+                WHERE p.name LIKE %s
+            """, (f"%{search_term}%",))
             results = cursor.fetchall()
             if results:
                 df = pd.DataFrame(results)
@@ -200,13 +200,13 @@ if main_options == "Basic Queries":
         vendor_id = st.text_input("Enter Vendor ID")
         if st.button("View Vendor Info"):
             cursor.execute("""
-                SELECT v.name, v.hotline, v.description,
+                SELECT v.name, v.hotline,
                        COUNT(DISTINCT o.order_id) as total_orders,
                        COUNT(DISTINCT o.customer_id) as unique_customers
                 FROM vendor v
                 LEFT JOIN orders o ON v.vendor_id = o.created_by
                 WHERE v.vendor_id = %s
-                GROUP BY v.vendor_id, v.name, v.hotline, v.description
+                GROUP BY v.vendor_id, v.name, v.hotline
             """, (vendor_id,))
             results = cursor.fetchall()
             if results:
@@ -219,14 +219,14 @@ if main_options == "Basic Queries":
         st.header("Popular Products")
         st.write("Products ranked by number of orders")
         cursor.execute("""
-            SELECT p.name, p.description,
+            SELECT p.name,
                    COUNT(o.order_id) as times_ordered,
                    SUM(o.quantity) as total_quantity,
                    c.name as category_name
             FROM product p
             LEFT JOIN orders o ON p.product_id = o.product_id
             LEFT JOIN category c ON p.category_id = c.category_id
-            GROUP BY p.product_id, p.name, p.description, c.name
+            GROUP BY p.product_id, p.name, c.name
             ORDER BY times_ordered DESC
             LIMIT 10
         """)
@@ -242,7 +242,7 @@ if main_options == "Basic Queries":
         min_discount = st.slider("Minimum Discount", 0.0, 1.0, 0.1)
         if st.button("View Discounted Products"):
             cursor.execute("""
-                SELECT p.name, p.description, p.quantity,
+                SELECT p.name, p.quantity,
                        p.discount, c.name as category_name
                 FROM product p
                 LEFT JOIN category c ON p.category_id = c.category_id
@@ -260,11 +260,9 @@ if main_options == "Basic Queries":
         st.header("Insert New Product")
         with st.form("new_product_form"):
             name = st.text_input("Product Name")
-            description = st.text_area("Description")
             quantity = st.number_input("Quantity", min_value=1, value=1)
             discount = st.number_input("Discount (0-1)", min_value=0.0, max_value=1.0, value=1.0)
             
-            # Get categories for dropdown
             cursor.execute("SELECT category_id, name FROM category")
             categories = cursor.fetchall()
             category_options = {cat['name']: cat['category_id'] for cat in categories}
@@ -272,9 +270,9 @@ if main_options == "Basic Queries":
             
             if st.form_submit_button("Insert Product"):
                 cursor.execute("""
-                    INSERT INTO product (name, description, quantity, discount, category_id)
-                    VALUES (%s, %s, %s, %s, %s)
-                """, (name, description, quantity, discount, category_options[selected_category]))
+                    INSERT INTO product (name, quantity, discount, category_id)
+                    VALUES (%s, %s, %s, %s)
+                """, (name, quantity, discount, category_options[selected_category]))
                 conn.commit()
                 st.success("Product inserted successfully!")
 
@@ -352,7 +350,7 @@ elif main_options == "Advanced Analytics":
         
         # Query construction
         query = """
-            SELECT p.name, p.description,
+            SELECT p.name,
                    COUNT(o.order_id) as times_ordered,
                    SUM(o.quantity) as total_quantity,
                    p.discount,
@@ -368,7 +366,7 @@ elif main_options == "Advanced Analytics":
             query += " AND c.category_id = %s"
             params.append(category_options[selected_category])
         
-        query += " GROUP BY p.product_id, p.name, p.description, p.discount, c.name ORDER BY times_ordered DESC"
+        query += " GROUP BY p.product_id, p.name, p.discount, c.name ORDER BY times_ordered DESC"
         
         cursor.execute(query, tuple(params))
         results = cursor.fetchall()
@@ -475,11 +473,9 @@ elif main_options == "Data Management":
         with st.expander("Add New Product"):
             with st.form("new_product_form"):
                 name = st.text_input("Product Name")
-                description = st.text_area("Description")
                 quantity = st.number_input("Quantity", min_value=1, value=1)
                 discount = st.number_input("Discount (0-1)", min_value=0.0, max_value=1.0, value=0.0)
                 
-                # Get categories for dropdown
                 cursor.execute("SELECT category_id, name FROM category")
                 categories = cursor.fetchall()
                 category_options = {cat['name']: cat['category_id'] for cat in categories}
@@ -488,9 +484,9 @@ elif main_options == "Data Management":
                 if st.form_submit_button("Add Product"):
                     try:
                         cursor.execute("""
-                            INSERT INTO product (name, description, quantity, discount, category_id)
-                            VALUES (%s, %s, %s, %s, %s)
-                        """, (name, description, quantity, discount, category_options[selected_category]))
+                            INSERT INTO product (name, quantity, discount, category_id)
+                            VALUES (%s, %s, %s, %s)
+                        """, (name, quantity, discount, category_options[selected_category]))
                         conn.commit()
                         st.success("Product added successfully!")
                     except Error as e:
@@ -499,7 +495,7 @@ elif main_options == "Data Management":
         # View/Edit existing products
         st.subheader("Existing Products")
         cursor.execute("""
-            SELECT p.product_id, p.name, p.description, p.quantity, p.discount,
+            SELECT p.product_id, p.name, p.quantity, p.discount,
                    c.name as category
             FROM product p
             LEFT JOIN category c ON p.category_id = c.category_id
@@ -543,13 +539,12 @@ elif main_options == "Data Management":
         with st.form("new_vendor_form"):
             vendor_name = st.text_input("Vendor Name")
             hotline = st.text_input("Hotline")
-            description = st.text_area("Description")
             if st.form_submit_button("Add Vendor"):
                 try:
                     cursor.execute("""
-                        INSERT INTO vendor (name, hotline, description)
-                        VALUES (%s, %s, %s)
-                    """, (vendor_name, hotline, description))
+                        INSERT INTO vendor (name, hotline)
+                        VALUES (%s, %s)
+                    """, (vendor_name, hotline))
                     conn.commit()
                     st.success("Vendor added successfully!")
                 except Error as e:
@@ -558,11 +553,11 @@ elif main_options == "Data Management":
         # View existing vendors
         st.subheader("Existing Vendors")
         cursor.execute("""
-            SELECT v.name, v.hotline, v.description,
+            SELECT v.name, v.hotline,
                    COUNT(DISTINCT o.order_id) as total_orders
             FROM vendor v
             LEFT JOIN orders o ON v.vendor_id = o.created_by
-            GROUP BY v.vendor_id, v.name, v.hotline, v.description
+            GROUP BY v.vendor_id, v.name, v.hotline
         """)
         results = cursor.fetchall()
         if results:

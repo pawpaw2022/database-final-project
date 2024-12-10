@@ -208,29 +208,25 @@ def insert_orders(connection):
     """Insert order data from CSV"""
     try:
         orders_df = pd.read_csv('data/order.csv')
-        # Convert numeric columns to Python int
-        orders_df = orders_df.astype({
-            'order_id': int,
-            'customer_id': int,
-            'product_id': int,
-            'created_by': int,
-            'quantity': int
-        })
         
-        # Add current timestamp for each order
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        
+        # First, get all valid customer_ids from the database
         cursor = connection.cursor()
+        cursor.execute("SELECT customer_id FROM customer")
+        valid_customer_ids = {row[0] for row in cursor.fetchall()}
+        
+        # Filter orders_df to only include valid customer_ids
+        orders_df = orders_df[orders_df['customer_id'].isin(valid_customer_ids)]
         
         insert_query = """
-        INSERT INTO orders (order_id, customer_id, product_id, created_by, quantity, created_at)
-        VALUES (%s, %s, %s, %s, %s, %s)
+        INSERT INTO orders (order_id, customer_id, product_id, created_by, quantity)
+        VALUES (%s, %s, %s, %s, %s)
         """
         
-        # Add timestamp to each order tuple
+        # Create tuples of data and explicitly convert numpy.int64 to Python int
         order_data = [
-            (*map(int, row), current_time) 
-            for row in orders_df.values
+            (int(row.order_id), int(row.customer_id), int(row.product_id), 
+             int(row.created_by), int(row.quantity))
+            for _, row in orders_df.iterrows()
         ]
         
         cursor.executemany(insert_query, order_data)
@@ -285,14 +281,14 @@ def main():
         # clear_tables(connection)
         
         # Then insert in correct order
-        insert_customers(connection)
-        insert_addresses(connection)
-        insert_payments(connection)
-        insert_categories(connection)
-        insert_products(connection)
+        # insert_customers(connection)
+        # insert_addresses(connection)
+        # insert_payments(connection)
+        # insert_categories(connection)
+        # insert_products(connection)
         insert_profiles(connection)
-        insert_vendors(connection)
-        insert_orders(connection)
+        # insert_vendors(connection)
+        # insert_orders(connection)
         
         print("Data insertion completed successfully")
         
